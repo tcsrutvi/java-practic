@@ -1,25 +1,27 @@
 package com.tcs.entity;
 
 public class User {
-
 	private String name;
 	private Long mobileNumber;
-	private byte age;
-
-	// Keeping private to ensure data encapsulation
-	public void workout() {
-		System.out.println(name + "is working out");
-
-	}
+	//beginner, intermediate, export
+	//private ROLE role;
+	private byte age; // data encapsulation
+	//constructor
 	
-
+	public void workout() {
+		System.out.println(name + " is working out..");
+	}
+//custom constructor
 	public User(String name, Long mobileNumber, byte age) {
-		super();
-		this.name = name;
-		this.mobileNumber = mobileNumber;
+		this(name, mobileNumber);
 		this.age = age;
 	}
-
+//overloaded construtor
+	public User(String name, Long mobileNumber) {
+		super();//call super class constructor
+		this.name = name;
+		this.mobileNumber = mobileNumber;
+	}
 	public String getName() {
 		return name;
 	}
@@ -46,7 +48,6 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [name=" + name + "]";
+		return "[name=" + name + "]";
 	}
-
 }
